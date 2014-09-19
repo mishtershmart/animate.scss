@@ -1,3 +1,20 @@
+# Note!
+
+This is a fork of [this repository](https://github.com/hmps/animate.scss). I decided to fork this as I needed a slightly different way of implementing CSS animations; that is, I prefer to split the general keyframe declarations from the selector-specific animation rules.
+
+This fork works more or less the same as the original, except for the need to call the mixin that compiles the relative keyframes before calling an animation mixin.
+
+e.g.
+```
+// Setting up the keyframes
+@include fadeInLeft_keyframes;
+
+// Adding the animation to a selector
+.mySelector{
+    @include fadeInLeft(1s, ease, 0.2s);
+}
+```
+
 # Animate.scss
 
 *Sass 3.3 is required to use Animate.scss*
