@@ -1,7 +1,4 @@
-@mixin bounce($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
-	@include animation(bounce $duration $function $delay $count $fill);
-	@include visibility($visibility);
-
+@mixin bounce_keyframes {
 	@at-root {
 		@include keyframes(bounce) {
 			0%, 20%, 50%, 80%, 100% {
@@ -15,4 +12,9 @@
 			}
 		}
 	}
+}
+
+@mixin bounce($duration: $global-animation-duration, $function: $global-animation-function, $delay: $global-animation-delay, $count: $global-animation-count, $fill: $global-animation-fill, $visibility: $global-animation-visibility) {
+    @include animation(bounce $duration $function $delay $count $fill);
+    @include visibility($visibility);
 }

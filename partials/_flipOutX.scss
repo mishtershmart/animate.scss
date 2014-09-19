@@ -1,17 +1,18 @@
-@mixin flipOutX($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
-	@include animation(flipOutX $duration $function $delay $count $fill);
-	@include visibility($visibility);
-
-	@at-root {
-		@include keyframes(flipOutX) {
-			0% {
-				@include transform(perspective(400px) rotateX(0deg));
-				opacity: 1;
-			}
-			100% {
-				@include transform(perspective(400px) rotateX(90deg));
-				opacity: 0;
-			}
-		}
-	}
+@mixin flipOutX_keyframes {
+    @at-root {
+        @include keyframes(flipOutX) {
+            0% {
+                @include transform(perspective(400px) rotateX(0deg));
+                opacity : 1;
+            }
+            100% {
+                @include transform(perspective(400px) rotateX(90deg));
+                opacity : 0;
+            }
+        }
+    }
+}
+@mixin flipOutX($duration : $global-animation-duration, $function : $global-animation-function, $delay : $global-animation-delay, $count : $global-animation-count, $fill : $global-animation-fill, $visibility : $global-animation-visibility) {
+    @include animation(flipOutX $duration $function $delay $count $fill);
+    @include visibility($visibility);
 }

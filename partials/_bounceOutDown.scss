@@ -1,20 +1,21 @@
-@mixin bounceOutDown($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
-	@include animation(bounceOutDown $duration $function $delay $count $fill);
-	@include visibility($visibility);
-
-	@at-root {
-		@include keyframes(bounceOutDown) {
-			0% {
-				@include transform(translateY(0));
-			}
-			20% {
-				opacity: 1;
-				@include transform(translateY(-20px));
-			}
-			100% {
-				opacity: 0;
-				@include transform(translateY(2000px));
-			}
-		}
-	}
+@mixin bounceOutDown_keyframes {
+    @at-root {
+        @include keyframes(bounceOutDown) {
+            0% {
+                @include transform(translateY(0));
+            }
+            20% {
+                opacity : 1;
+                @include transform(translateY(-20px));
+            }
+            100% {
+                opacity : 0;
+                @include transform(translateY(2000px));
+            }
+        }
+    }
+}
+@mixin bounceOutDown($duration : $global-animation-duration, $function : $global-animation-function, $delay : $global-animation-delay, $count : $global-animation-count, $fill : $global-animation-fill, $visibility : $global-animation-visibility) {
+    @include animation(bounceOutDown $duration $function $delay $count $fill);
+    @include visibility($visibility);
 }

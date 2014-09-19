@@ -1,18 +1,19 @@
-@mixin rotateOutUpLeft($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
-	@include animation(rotateOutUpLeft $duration $function $delay $count $fill);
-	@include transform-origin(left top);
-	@include visibility($visibility);
-
-	@at-root {
-		@include keyframes(rotateOutUpLeft) {
-			0% {
-				@include transform(rotate(0));
-				opacity: 1;
-			}
-			100% {
-				@include transform(rotate(90deg));
-				opacity: 0;
-			}
-		}
-	}
+@mixin rotateOutUpLeft_keyframes {
+    @at-root {
+        @include keyframes(rotateOutUpLeft) {
+            0% {
+                @include transform(rotate(0));
+                opacity : 1;
+            }
+            100% {
+                @include transform(rotate(90deg));
+                opacity : 0;
+            }
+        }
+    }
+}
+@mixin rotateOutUpLeft($duration : $global-animation-duration, $function : $global-animation-function, $delay : $global-animation-delay, $count : $global-animation-count, $fill : $global-animation-fill, $visibility : $global-animation-visibility) {
+    @include animation(rotateOutUpLeft $duration $function $delay $count $fill);
+    @include transform-origin(left top);
+    @include visibility($visibility);
 }

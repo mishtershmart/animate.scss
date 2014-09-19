@@ -1,34 +1,35 @@
-@mixin hingeRight($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
-	@include animation(hingeRight $duration $function $delay $count $fill);
-	@include visibility($visibility);
-
-	@at-root {
-		@include keyframes(hingeRight) {
-			0% {
-				@include transform(rotate(0));
-				@include transform-origin(top right);
-				animation-timing-function: ease-in-out;
-			}
-			20%, 60% {
-				@include transform(rotate(-80deg));
-				@include transform-origin(top right);
-				animation-timing-function: ease-in-out;
-			}
-			40% {
-				@include transform(rotate(-60deg));
-				@include transform-origin(top right);
-				animation-timing-function: ease-in-out;
-			}
-			80% {
-				@include transform(rotate(-60deg) translateY(0));
-				opacity: 1;
-				@include transform-origin(top right);
-				animation-timing-function: ease-in-out;
-			}
-			100% {
-				@include transform(translateY(700px));
-				opacity: 0;
-			}
-		}
-	}
+@mixin hingeRight_keyframes {
+    @at-root {
+        @include keyframes(hingeRight) {
+            0% {
+                @include transform(rotate(0));
+                @include transform-origin(top right);
+                animation-timing-function : ease-in-out;
+            }
+            20%, 60% {
+                @include transform(rotate(-80deg));
+                @include transform-origin(top right);
+                animation-timing-function : ease-in-out;
+            }
+            40% {
+                @include transform(rotate(-60deg));
+                @include transform-origin(top right);
+                animation-timing-function : ease-in-out;
+            }
+            80% {
+                @include transform(rotate(-60deg) translateY(0));
+                opacity                   : 1;
+                @include transform-origin(top right);
+                animation-timing-function : ease-in-out;
+            }
+            100% {
+                @include transform(translateY(700px));
+                opacity : 0;
+            }
+        }
+    }
+}
+@mixin hingeRight($duration : $global-animation-duration, $function : $global-animation-function, $delay : $global-animation-delay, $count : $global-animation-count, $fill : $global-animation-fill, $visibility : $global-animation-visibility) {
+    @include animation(hingeRight $duration $function $delay $count $fill);
+    @include visibility($visibility);
 }

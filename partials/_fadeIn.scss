@@ -1,11 +1,13 @@
-@mixin fadeIn($duration: $global-duration, $function: $global-function, $delay: $global-delay, $count: $global-count, $fill: $global-fill, $visibility: $global-visibility) {
-	@include animation(fadeIn $duration $function $delay $count $fill);
-	@include visibility($visibility);
-
+@mixin fadeIn_keyframes {
 	@at-root {
 		@include keyframes(fadeIn) {
 			0% {opacity: 0;}
 			100% {opacity: 1;}
 		}
 	}
+}
+
+@mixin fadeIn($duration: $global-animation-duration, $function: $global-animation-function, $delay: $global-animation-delay, $count: $global-animation-count, $fill: $global-animation-fill, $visibility: $global-animation-visibility) {
+    @include animation(fadeIn $duration $function $delay $count $fill);
+    @include visibility($visibility);
 }
