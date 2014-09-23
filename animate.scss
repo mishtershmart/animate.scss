@@ -36,12 +36,12 @@
 // in each mixin.
 //-----------------------------------------------------------------------//
 
-$global-animation-duration : 		1s 		!default;
-$global-animation-function : 		ease 	!default;
-$global-animation-delay : 			.2s 	!default;
-$global-animation-count :			1 		!default;
-$global-animation-fill : 			both 	!default;
-$global-animation-visibility : 	    hidden 	!default;
+$global-animation-duration          :   1s 		!default;
+$global-animation-timing-function   : 	ease 	!default;
+$global-animation-delay             : 	0s 	    !default;
+$global-animation-iteration-count   :	1 		!default;
+$global-animation-fill-mode         : 	both 	!default;
+$global-animation-visibility        : 	visible !default;
 
 $global-animation-prefixes : (webkit moz ms o spec);
 

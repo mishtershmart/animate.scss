@@ -24,7 +24,7 @@
         }
     }
 }
-@mixin flip($duration : $global-animation-duration, $function : $global-animation-function, $delay : $global-animation-delay, $count : $global-animation-count, $fill : $global-animation-fill, $visibility : $global-animation-visibility) {
+@mixin flip($duration : $global-animation-duration, $function : $global-animation-timing-function, $delay : $global-animation-delay, $count : $global-animation-iteration-count, $fill : $global-animation-fill-mode, $visibility : $global-animation-visibility) {
     @include transform-style(preserve-3d);
     @include animation(flip $duration $function $delay $count $fill);
     @include visibility($visibility);
